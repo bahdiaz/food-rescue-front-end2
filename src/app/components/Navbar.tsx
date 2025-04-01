@@ -4,7 +4,6 @@ const Navbar = () => {
   return (
     <header className="bg-[#2D8C44] h-20 flex justify-between items-center px-6 text-white font-bold">
         <img src="/public/ChatGPT Image 1_04_2025, 20_37_53.png" alt="" />
-        <h1 className="text-xl">FoodRescue</h1>
         <nav>
           <ul className="flex gap-5">
             <li><Link to="/">Home</Link></li>
