@@ -17,7 +17,7 @@ const Home = () => {
               Ajude a reduzir o desperdício! Faça sua doação.
             </h1>
             <button className="mt-4 px-8 py-2 bg-[#FF8C42] text-white text-xl font-bold rounded-lg">
-              Doe Agora
+              Doe agora
             </button>
           </div>
         </div>
@@ -29,7 +29,7 @@ const Home = () => {
             <i className="fas fa-shopping-cart text-3xl"></i>
           </div>
           <h2 className="text-xl font-semibold text-center">
-            Adicionar Alimento
+            Adicionar alimento
           </h2>
         </div>
         <div className="bg-white p-4 rounded-lg shadow-md">
@@ -37,7 +37,7 @@ const Home = () => {
             <i className="fas fa-box-heart text-3xl"></i>
           </div>
           <h2 className="text-xl font-semibold text-center">
-            Gerenciar Doações
+            Gerenciar doações
           </h2>
         </div>
         <div className="bg-white p-4 rounded-lg shadow-md">
