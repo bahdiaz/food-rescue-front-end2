@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 const Navbar = () => {
   return (
     <header className="bg-[#2D8C44] h-20 flex justify-between items-center px-6 text-white font-bold">
-        <img src="/public/ChatGPT Image 1_04_2025, 20_46_27.png" alt="" />
+        <img src="C:\Users\labsfiap\Documents\GitHub\food-rescue-front-end2\public\logo.png" alt="" />
         <nav>
           <ul className="flex gap-5">
             <li><Link to="/">Home</Link></li>
@@ -13,7 +13,6 @@ const Navbar = () => {
           </ul>
         </nav>
       </header>
-
   );
 };
 
