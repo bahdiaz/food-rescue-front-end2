@@ -2,33 +2,18 @@ import { Link } from "react-router-dom";
 
 const Navbar = () => {
   return (
-    <header className="bg-[#2D8C44] h-[80px] flex items-center justify-between px-6">
-      <div className="text-white font-bold text-2xl">FoodRescue</div>
-      <nav>
-        <ul className="flex space-x-6">
-          <li>
-            <Link to="/" className="text-white">
-              Home
-            </Link>
-          </li>
-          <li>
-            <Link to="/cadastro" className="text-white">
-              Cadastrar Alimento
-            </Link>
-          </li>
-          <li>
-            <Link to="/listagem" className="text-white">
-              Lista de Alimentos
-            </Link>
-          </li>
-          <li>
-            <Link to="/perfil" className="text-white">
-              Perfil
-            </Link>
-          </li>
-        </ul>
-      </nav>
-    </header>
+    <header className="bg-[#2D8C44] h-20 flex justify-between items-center px-6 text-white font-bold">
+        <h1 className="text-xl">FoodRescue</h1>
+        <nav>
+          <ul className="flex gap-5">
+            <li><Link to="/">Home</Link></li>
+            <li><Link to="/cadastro">Cadastrar Alimento</Link></li>
+            <li><Link to="/listagem">Lista de Alimentos</Link></li>
+            <li><Link to="/perfil">Perfil</Link></li>
+          </ul>
+        </nav>
+      </header>
+
   );
 };
 
