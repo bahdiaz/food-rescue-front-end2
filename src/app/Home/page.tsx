@@ -1,56 +1,56 @@
-import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
+import Link from "next/link";
+import "../../app/globals.css";
+import { Inter } from "next/font/google";
+import { Metadata } from "next"
+import { Roboto } from "next/font/google";
+import { Montserrat } from "next/font/google";
 
-const Home = () => {
+
+export default function Home() {
   return (
-    <div>
-      <Navbar />
-      <section className="relative">
-        <img
-          src="/images/food-banner.jpg"
-          alt="Alimentos frescos"
-          className="w-full h-[300px] object-cover"
-        />
-        <div className="absolute inset-0 bg-black opacity-50 flex items-center justify-center">
-          <div className="text-center text-white">
-            <h1 className="text-4xl font-bold">
-              Ajude a reduzir o desperdício! Faça sua doação.
-            </h1>
-            <button className="mt-4 px-8 py-2 bg-[#FF8C42] text-white text-xl font-bold rounded-lg">
-              Doe agora
-            </button>
-          </div>
+    <div className="flex flex-col min-h-screen">
+      {/* Header */}
+      <header className="bg-[#2D8C44] h-20 flex justify-between items-center px-6 text-white font-bold">
+       <img src=""/>
+        <h1 className="text-xl">FoodRescue</h1>
+        <nav>
+          <ul className="flex gap-5">
+            <li><Link href="/">Home</Link></li>
+            <li><Link href="/cadastro">Cadastrar alimento</Link></li>
+            <li><Link href="/listagem">Lista de alimentos</Link></li>
+            <li><Link href="/perfil">Perfil</Link></li>
+          </ul>
+        </nav>
+      </header>
+      {/* Banner */}
+      <section className="relative h-[300px] bg-cover bg-center flex items-center justify-center text-white" style={{ backgroundImage: "url('/images/banner.jpg')" }}>
+        <div className="absolute inset-0 bg-black bg-opacity-50"></div>
+        <div className="relative text-center">
+          <h2 className="text-3xl font-bold">Ajude a reduzir o desperdício! Faça sua doação.</h2>
+          <Link href="/cadastro" className="mt-4 inline-block bg-[#FF8C42] text-white text-lg font-bold py-3 px-6 rounded-lg">Doe Agora</Link>
         </div>
       </section>
 
-      <section className="grid grid-cols-1 md:grid-cols-3 gap-6 p-6">
-        <div className="bg-white p-4 rounded-lg shadow-md">
-          <div className="flex justify-center mb-4">
-            <i className="fas fa-shopping-cart text-3xl"></i>
-          </div>
-          <h2 className="text-xl font-semibold text-center">
-            Adicionar alimento
-          </h2>
-        </div>
-        <div className="bg-white p-4 rounded-lg shadow-md">
-          <div className="flex justify-center mb-4">
-            <i className="fas fa-box-heart text-3xl"></i>
-          </div>
-          <h2 className="text-xl font-semibold text-center">
-            Gerenciar doações
-          </h2>
-        </div>
-        <div className="bg-white p-4 rounded-lg shadow-md">
-          <div className="flex justify-center mb-4">
-            <i className="fas fa-clock text-3xl"></i>
-          </div>
-          <h2 className="text-xl font-semibold text-center">Histórico</h2>
-        </div>
-      </section>
+      {/* Seção Principal */}
+      <main className="flex-1 p-6 grid grid-cols-1 md:grid-cols-3 gap-5">
+        <Card title="Adicionar Alimento" icon="🛒" link="/cadastro" />
+        <Card title="Gerenciar Doações" icon="📦" link="/doacoes" />
+        <Card title="Histórico" icon="⏳" link="/historico" />
+      </main>
 
-      <Footer />
+      {/* Footer */}
+      <footer className="bg-[#1E6030] h-16 flex items-center justify-center text-white">
+        <p>FoodRescue © 2025 - Todos os direitos reservados.</p>
+      </footer>
     </div>
   );
-};
+}
 
-export default Home;
+function Card({ title, icon, link }: { title: string; icon: string; link: string }) {
+  return (
+    <Link href={link} className="bg-white p-6 rounded-lg shadow-md flex flex-col items-center text-center hover:shadow-lg transition">
+      <span className="text-3xl mb-2">{icon}</span>
+      <h3 className="text-lg font-bold">{title}</h3>
+    </Link>
+  );
+}
