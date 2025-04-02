@@ -11,6 +11,7 @@ export default function Home() {
       {/* Header */}
       <header className="bg-[#F5F0E6] h-20 flex justify-between items-center px-6 text-white font-bold">
         <img src="assets/logo.png" width={100} height={100}/>
+        <img src="/logo.png" width={100} height={100}/>
         <nav>
           <ul className="flex gap-5">
             <li><Link href="/" className="text-black">Home</Link></li>
