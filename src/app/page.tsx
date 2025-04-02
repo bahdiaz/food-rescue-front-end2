@@ -1,28 +1,28 @@
 import Link from "next/link";
-import "./globals.css";
 import { Inter } from "next/font/google";
 import { Metadata } from "next"
 import { Roboto } from "next/font/google";
 import { Montserrat } from "next/font/google";
 
+
 export default function Home() {
   return (
     <div className="flex flex-col min-h-screen">
       {/* Header */}
-      <header className="bg-[#2D8C44] h-20 flex justify-between items-center px-6 text-white font-bold">
-        <h1 className="text-xl">FoodRescue</h1>
+      <header className="bg-[#F5F0E6] h-20 flex justify-between items-center px-6 text-white font-bold">
+        <img src="/logo.png" width={100} height={100}/>
         <nav>
           <ul className="flex gap-5">
-            <li><Link href="/">Home</Link></li>
-            <li><Link href="/cadastro">Cadastrar Alimento</Link></li>
-            <li><Link href="/listagem">Lista de Alimentos</Link></li>
-            <li><Link href="/perfil">Perfil</Link></li>
+            <li><Link href="/" className="text-black">Home</Link></li>
+            <li><Link href="/cadastro" className="text-black">Cadastrar alimento</Link></li>
+            <li><Link href="/listagem" className="text-black">Lista de alimentos</Link></li>
+            <li><Link href="/perfil" className="text-black">Perfil</Link></li>
           </ul>
         </nav>
       </header>
       {/* Banner */}
       <section className="relative h-[300px] bg-cover bg-center flex items-center justify-center text-white" style={{ backgroundImage: "url('/images/banner.jpg')" }}>
-        <div className="absolute inset-0 bg-black bg-opacity-50"></div>
+        <div className="absolute inset-0" style={{ backgroundColor: "#1E4D2B"}}></div>
         <div className="relative text-center">
           <h2 className="text-3xl font-bold">Ajude a reduzir o desperdício! Faça sua doação.</h2>
           <Link href="/cadastro" className="mt-4 inline-block bg-[#FF8C42] text-white text-lg font-bold py-3 px-6 rounded-lg">Doe Agora</Link>
