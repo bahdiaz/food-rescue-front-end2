@@ -1,3 +1,4 @@
+"use client";
 import { useState } from "react";
 import axios from "axios";
 
@@ -19,26 +20,32 @@ const Cadastro = () => {
     try {
       const response = await axios.post("http://localhost:8080/users", {
         name: nome,
-        email: descricao, // estamos usando como campo fake
+        descricao: descricao,
       });
 
       setMensagem(`Alimento "${response.data.name}" cadastrado com sucesso!`);
       setErro("");
       setNome("");
       setDescricao("");
-    } catch (error) {
+    } catch (error: any) {
       console.error("Erro ao cadastrar alimento:", error);
-      setErro("Erro ao cadastrar alimento.");
+      const msg =
+        error?.response?.data?.message || "Erro ao cadastrar alimento.";
+      setErro(msg);
       setMensagem("");
     }
   };
 
   return (
     <div className="p-6 max-w-lg mx-auto bg-white shadow-lg rounded-lg">
-      <h1 className="text-3xl font-bold text-[#2D8C44] mb-4 text-center">Cadastrar Alimento</h1>
+      <h1 className="text-3xl font-bold text-[#2D8C44] mb-4 text-center">
+        Cadastrar Alimento
+      </h1>
 
       {mensagem && (
-        <p className="mb-4 text-green-600 text-center font-medium">{mensagem}</p>
+        <p className="mb-4 text-green-600 text-center font-medium">
+          {mensagem}
+        </p>
       )}
 
       {erro && (
@@ -47,7 +54,9 @@ const Cadastro = () => {
 
       <form onSubmit={handleSubmit}>
         <div className="mb-4">
-          <label className="block text-lg text-gray-700">Nome do Alimento</label>
+          <label className="block text-lg text-gray-700">
+            Nome do Alimento
+          </label>
           <input
             type="text"
             value={nome}
